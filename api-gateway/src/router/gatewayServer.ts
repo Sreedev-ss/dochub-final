@@ -4,9 +4,9 @@ import axios, { AxiosRequestConfig } from 'axios';
 const app = express();
 
 const serverMappings: Record<string, string> = {
-    '/auth': 'http://auth-server:8001',
-    '/doctor': 'http://doctor-server:8000/doc',
-    '/payment': 'http://payment-server:8002',
+    '/auth': 'http://localhost:8001',
+    '/doctor': 'http://localhost:8000/doc',
+    '/payment': 'http://localhost:8002',
 };
 
 const determineServerURL = (url: string): string | null => {
