@@ -14,7 +14,8 @@ import {
     getMontlyRevenue,
     getYearlyRevenue,
     getSymptomType,
-    addPrescription
+    addPrescription,
+    getPrescription
 } from '../controller/doctorController'
 import {
     addAppointment,
@@ -53,6 +54,7 @@ app.get('/all-appointment', getAllAppointment)
 app.post('/all-appointment-bydate', getAllAppointmentBydate)
 
 app.post('/add-prescription',addPrescription)
+app.post('/get-prescription',getPrescription)
 
 app.get('/get-patients/:doctorId',getPatientCount)
 app.get('/get-totalRevenue/:doctorId',getTotalRevenue)

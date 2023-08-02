@@ -129,6 +129,17 @@ export const addPrescription  = async (req: Request, res: Response) => {
     }
 }
 
+export const getPrescription = async (req: Request, res: Response) => {
+    try {
+        const {data} = req.body
+        const response = await PrescriptionModel.find({patientId:data})
+        res.json(response)
+    }catch (error) {
+        console.log(error)
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+    }
+
 export const getPatientCount = async (req: Request, res: Response) => {
     try {
         const { doctorId } = req.params
